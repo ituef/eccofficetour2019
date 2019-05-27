@@ -27,17 +27,19 @@ function stepSetSinhVien() {
         return false;
     }
     var email = $.trim($("input[name='txtEmail']").val());
-    if(email == ''){
+    if(email == '' || email){
         alert("VUI LÒNG NHẬP EMAIL");
         return false;
     }
     var phone = $.trim($("input[name='txtPhone']").val());
-    if(phone == ''){
+    var pn = lop.length;
+    if(phone == '' || pn !=10){
         alert("VUI LÒNG NHẬP SỐ ĐIỆN THOẠI");
         return false;
     }
     var lop = $.trim($("input[name='txtLop']").val());
-    if(lop == ''){
+    var n = lop.length;
+    if(lop == '' || n<10){
         alert("VUI LÒNG NHẬP TÊN LỚP");
         return false;
     }
@@ -70,7 +72,7 @@ function doComplete() {
 
 
 
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx34T4RzlTk-mw18pW6S9f9rdOHBHGBxah8cQGjfDexxVJNo2c/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxiL9IdbozeoiX0L44sjy2ol2waQIgV6F4eOKUrkK48FoFlCUro/exec';
 form.addEventListener('submit', e => {
     e.preventDefault(); 
     document.querySelector('.js-loading').classList.remove('is-hidden');
